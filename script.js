@@ -88,34 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeInElements.forEach(el => el.classList.add('visible'));
     }
 
-    // --- CONTACT FORM HANDLING ---
-    const contactForm = document.getElementById('contact-form');
-    const thankYouMessage = document.getElementById('form-thank-you');
 
-    if (contactForm && thankYouMessage) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Basic validation
-            const name = contactForm.querySelector('#name').value;
-            const email = contactForm.querySelector('#email').value;
-            const message = contactForm.querySelector('#message').value;
-
-            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-                alert('Please fill out all required fields.');
-                return;
-            }
-
-            // On successful "submission"
-            thankYouMessage.style.display = 'block';
-            contactForm.reset();
-
-            // Hide the message after a few seconds
-            setTimeout(() => {
-                thankYouMessage.style.display = 'none';
-            }, 5000);
-        });
-    }
 
 
     // --- THREE.JS PARTICLE BACKGROUND ---
